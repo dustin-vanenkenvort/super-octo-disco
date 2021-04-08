@@ -1,0 +1,55 @@
+MAIN
+
+        public List<string> setCards;
+   
+        public string Shuffle()
+        {
+            // Create instance of the random class
+            Random rand = new Random();
+
+            // Read the total count of cards in the card list and assign a 
+            // random index number to index
+            int index = rand.Next(setCards.Count);
+
+            // Create a draw variable
+            string draw;
+
+            // Use the random index variable to select a random word
+            // from the cards
+            draw = setCards[index];
+
+            return draw;
+        }
+	// draw card button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Create instance of class cards
+            Card cards = new Card();
+
+            // get the list of cards and input to the list of setCards
+            setCards = cards.Cards;
+
+            // just for testing if it works
+            textBox1.Text = Shuffle();
+        }
+
+CLass CARD
+
+   public List<string> Cards = new List<string>()
+        {
+            "G0",
+            "G1",
+            "G2",
+            "G3",
+            "G4",
+            "G5",
+            "G5",
+            "G6",
+            "G7",
+            "G8",
+            "G9",
+            "BS",
+            "GD2",
+            "D4",
+            "W"
+        };
